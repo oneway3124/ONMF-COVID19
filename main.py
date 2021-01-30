@@ -33,7 +33,8 @@ def main_train_joint():
     data_source_list = ['COVID_ACT_NOW', 'COVID_TRACKING_PROJECT', 'JHU']
     data_source = data_source_list[1]
     if_train_fresh = True
-    if_display_dict = False
+    # if_display_dict = False
+    if_display_dict = True
     if_recons = False
     if_ONMF_timeseris_predictor_historic = True
     L = 60  ## prediction length
@@ -43,7 +44,9 @@ def main_train_joint():
                                                   source=source,
                                                   data_source=data_source,
                                                   country_list=None,
-                                                  state_list=state_list,
+                                                  # state_list=state_list,
+                                                  state_list_test=state_list,  # 增加
+                                                  state_list_train=state_list,  # 增加
                                                   alpha=3,  # L1 sparsity regularizer for minibatch and online learning
                                                   beta=1,  # default learning exponent --
                                                   # customized in both trianing and online prediction functions
@@ -96,22 +99,22 @@ def main_train_joint():
     if if_ONMF_timeseris_predictor_historic:
 
         A_full_predictions_trials, W_total_seq, code = reconstructor.ONMF_predictor_historic(mode=3,
-                                                                                   foldername=foldername,
-                                                                                   learn_from_future2past=True,
-                                                                                   ini_dict=None,
-                                                                                   ini_A=None,
-                                                                                   ini_B=None,
-                                                                                   beta=1,
-                                                                                   a1=0,
-                                                                                   # regularizer for the code in partial fitting
-                                                                                   a2=0,
-                                                                                   # regularizer for the code in recursive prediction
-                                                                                   future_extrapolation_length=7,
-                                                                                   if_save=True,
-                                                                                   minibatch_training_initialization=True,
-                                                                                   minibatch_alpha=1,
-                                                                                   minibatch_beta=1,
-                                                                                   num_trials=num_trials)  # take a number of trials to generate empirical confidence interval
+                                                                                             foldername=foldername,
+                                                                                             learn_from_future2past=True,
+                                                                                             ini_dict=None,
+                                                                                             ini_A=None,
+                                                                                             ini_B=None,
+                                                                                             beta=1,
+                                                                                             a1=0,
+                                                                                             # regularizer for the code in partial fitting
+                                                                                             a2=0,
+                                                                                             # regularizer for the code in recursive prediction
+                                                                                             future_extrapolation_length=7,
+                                                                                             if_save=True,
+                                                                                             minibatch_training_initialization=True,
+                                                                                             minibatch_alpha=1,
+                                                                                             minibatch_beta=1,
+                                                                                             num_trials=num_trials)  # take a number of trials to generate empirical confidence interval
 
         print('A_full_predictions_trials.shape', A_full_predictions_trials.shape)
         print('A_full_predictions_trials', A_full_predictions_trials)
@@ -122,14 +125,14 @@ def main_train_joint():
         ### plot online-trained dictionary (from last iteration)
         filename = "full_prediction_trials_" + str(num_trials) + "_" + list_states_abb
 
-        for state in state_list:
-            reconstructor.display_dictionary_Hospital(W_total_seq[-1,:,:], state_name=state, if_show=True, if_save=True,
-                                                      foldername=foldername,
-                                                      filename='online_' + filename)
+        # for state in state_list:  #临时
+        #     reconstructor.display_dictionary_Hospital(W_total_seq[-1, :, :], state_name=state, if_show=True, if_save=True,
+        #                                               foldername=foldername,
+        #                                               filename='online_' + filename)
 
         ### plot original and prediction curves
 
-        reconstructor.display_prediction_evaluation(A_full_predictions_trials[:, ], if_show=False, if_save=True,
+        reconstructor.display_prediction_evaluation(A_full_predictions_trials[:, ], if_show=True, if_save=True,
                                                     foldername=foldername,
                                                     filename=filename, if_errorbar=True, if_evaluation=True, title=None)
 

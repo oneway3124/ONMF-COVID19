@@ -620,12 +620,12 @@ class ONMF_timeseries_reconstructor():
         plt.subplots_adjust(left=0.01, right=0.62, bottom=0.1, top=0.99, wspace=0.1, hspace=0.4)  # for 12 atoms
         # plt.tight_layout()
 
-        if if_save:
-            if filename is None:
-                plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + cases + '.png')
-            else:
-                plt.savefig(
-                    'Time_series_dictionary/' + str(foldername) + '/Dict-' + cases + '_' + str(filename) + '.png')
+        # if if_save:
+        #     if filename is None:
+        #         plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + cases + '.png')
+        #     else:
+        #         plt.savefig(
+        #             'Time_series_dictionary/' + str(foldername) + '/Dict-' + cases + '_' + str(filename) + '.png')
         if if_show:
             plt.show()
 
@@ -679,12 +679,12 @@ class ONMF_timeseries_reconstructor():
         plt.subplots_adjust(left=0.01, right=0.62, bottom=0.1, top=0.8, wspace=0.1, hspace=0.4)  # for 12 atoms
         # plt.tight_layout()
 
-        if if_save:
-            if filename is None:
-                plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + str(state_name) + '.png')
-            else:
-                plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + str(state_name) + '_' + str(
-                    filename) + '.png')
+        # if if_save:
+        #     if filename is None:
+        #         plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + str(state_name) + '.png')
+        #     else:
+        #         plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + str(state_name) + '_' + str(
+        #             filename) + '.png')
         if if_show:
             plt.show()
 
@@ -741,9 +741,9 @@ class ONMF_timeseries_reconstructor():
         plt.subplots_adjust(left=0.01, right=0.99, bottom=0.3, top=0.99, wspace=0.1, hspace=0.4)
         # plt.tight_layout()
 
-        if if_save:
-            plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + str(self.country_list[0]) + '_' + str(
-                filename) + '.png')
+        # if if_save:
+        #     plt.savefig('Time_series_dictionary/' + str(foldername) + '/Dict-' + str(self.country_list[0]) + '_' + str(
+        #         filename) + '.png')
         if if_show:
             plt.show()
 
@@ -846,9 +846,9 @@ class ONMF_timeseries_reconstructor():
         # plt.tight_layout()
         plt.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.95, wspace=0.08, hspace=0.23)
 
-        if if_save:
-            plt.savefig('Time_series_dictionary/' + str(foldername) + '/Plot-' + str(
-                filename) + '.pdf')
+        # if if_save:
+        #     plt.savefig('Time_series_dictionary/' + str(foldername) + '/Plot-' + str(
+        #         filename) + '.pdf')
         if if_show:
             plt.show()
 
@@ -903,9 +903,9 @@ class ONMF_timeseries_reconstructor():
         plt.tight_layout(rect=[0, 0.03, 1, 0.9])
         # plt.subplots_adjust(left=0.2, right=0.9, bottom=0.1, top=0.85, wspace=0.08, hspace=0.23)
 
-        if if_save:
-            plt.savefig('Time_series_dictionary/' + str(foldername) + '/Plot-' + str(self.country_list[0]) + '-' + str(
-                filename) + '.png')
+        # if if_save:
+        #     plt.savefig('Time_series_dictionary/' + str(foldername) + '/Plot-' + str(self.country_list[0]) + '-' + str(
+        #         filename) + '.png')
         if if_show:
             plt.show()
 
@@ -974,8 +974,8 @@ class ONMF_timeseries_reconstructor():
             plt.tight_layout(rect=[0, 0.03, 1, 0.9])
             # plt.subplots_adjust(left=0.2, right=0.9, bottom=0.1, top=0.85, wspace=0.08, hspace=0.23)
 
-        if if_save:
-            plt.savefig('Time_series_dictionary/' + str(foldername) + '/Plot-' + cases + '.png')
+        # if if_save:
+        #     plt.savefig('Time_series_dictionary/' + str(foldername) + '/Plot-' + cases + '.png')
         if if_show:
             plt.show()
 
@@ -985,7 +985,7 @@ class ONMF_timeseries_reconstructor():
                    beta,
                    learn_joint_dict,
                    foldername,
-                   data_train = None,
+                   data_train=None,
                    iterations=None,
                    update_self=True,
                    if_save=True,
@@ -1051,15 +1051,15 @@ class ONMF_timeseries_reconstructor():
 
         print('dict_shape:', W.shape)
         print('code_shape:', code.shape)
-        if if_save:
-            np.save('Time_series_dictionary/' + str(foldername) + '/dict_learned_' + str(
-                mode) + '_' + 'pretraining' + '_' + str(list[0]), self.W)
-            np.save('Time_series_dictionary/' + str(foldername) + '/code_learned_' + str(
-                mode) + '_' + 'pretraining' + '_' + str(list[0]), self.code)
-            np.save('Time_series_dictionary/' + str(foldername) + '/At_' + str(mode) + '_' + 'pretraining' + '_' + str(
-                list[0]), At)
-            np.save('Time_series_dictionary/' + str(foldername) + '/Bt_' + str(mode) + '_' + 'pretraining' + '_' + str(
-                list[0]), Bt)
+        # if if_save:  #临时
+        #     np.save('Time_series_dictionary/' + str(foldername) + '/dict_learned_' + str(
+        #         mode) + '_' + 'pretraining' + '_' + str(list[0]), self.W)
+        #     np.save('Time_series_dictionary/' + str(foldername) + '/code_learned_' + str(
+        #         mode) + '_' + 'pretraining' + '_' + str(list[0]), self.code)
+        #     np.save('Time_series_dictionary/' + str(foldername) + '/At_' + str(mode) + '_' + 'pretraining' + '_' + str(
+        #         list[0]), At)
+        #     np.save('Time_series_dictionary/' + str(foldername) + '/Bt_' + str(mode) + '_' + 'pretraining' + '_' + str(
+        #         list[0]), Bt)
         return W, At, Bt, code
 
     def ONMF_predictor(self,
@@ -1068,7 +1068,7 @@ class ONMF_timeseries_reconstructor():
                        data_test=None,
                        data_train=None,
                        learn_from_future2past=False,
-                       prelearned_dict = None, # if not none, use this dictionary for prediction
+                       prelearned_dict=None,  # if not none, use this dictionary for prediction
                        ini_dict=None,
                        ini_A=None,
                        ini_B=None,
@@ -1079,7 +1079,7 @@ class ONMF_timeseries_reconstructor():
                        if_learn_online=True,
                        if_save=True,
                        # if_recons=True,  # Reconstruct observed data using learned dictionary
-                       learning_window_cap = None, # if not none, learn only from the past "learning_window_cap" days
+                       learning_window_cap=None,  # if not none, learn only from the past "learning_window_cap" days
                        minibatch_training_initialization=True,
                        minibatch_alpha=1,
                        minibatch_beta=1,
@@ -1092,15 +1092,11 @@ class ONMF_timeseries_reconstructor():
         Predict forthcoming data on the fly. This could be made to affect learning rate 
         '''
 
-
-
         if data_test is None:
             data_test = self.data_test.copy()
 
         if data_train is None:
             data_train = self.data_train.copy()
-
-
 
         if learning_window_cap is None:
             learning_window_cap = self.learning_window_cap
@@ -1148,20 +1144,20 @@ class ONMF_timeseries_reconstructor():
                 if online_learning:
                     T_start = k
                     if learning_window_cap is not None:
-                        T_start = max(k, data_train.shape[1]-learning_window_cap)
+                        T_start = max(k, data_train.shape[1] - learning_window_cap)
 
                     for t in np.arange(T_start, data_train.shape[1]):
                         if not learn_from_future2past:
                             a = np.maximum(0, t - self.num_patches_perbatch)
                             X = self.extract_patches_interval(time_interval_initial=a,
                                                               time_interval_terminal=t,
-                                                              A = data_train)  # get patch from the past2future
+                                                              A=data_train)  # get patch from the past2future
                         else:
                             t1 = data_train.shape[1] - t
                             a = np.minimum(data_train.shape[1], t1 + self.num_patches_perbatch)
                             X = self.extract_patches_interval(time_interval_initial=t1,
                                                               time_interval_terminal=a,
-                                                              A = data_train)  # get patch from the future2past
+                                                              A=data_train)  # get patch from the future2past
 
                         # print('X.shape', X.shape)
                         # X.shape = (# states) x (# window length) x (# variables) x (num_patches_perbatch)
@@ -1230,7 +1226,6 @@ class ONMF_timeseries_reconstructor():
                 # Assumes len(list_states)=1
                 self.W = np.concatenate(np.vsplit(self.W, len(self.state_list_train)), axis=1)
 
-
             #### forward recursive prediction begins
             for t in np.arange(data_test.shape[1], data_test.shape[1] + future_extrapolation_length):
                 patch = A_recons[:, t - k + L:t, :]
@@ -1267,7 +1262,7 @@ class ONMF_timeseries_reconstructor():
             else:
                 list = self.country_list
 
-            np.save('Time_series_dictionary/' + str(foldername) + '/full_results_' + 'num_trials_' + str(num_trials), self.result_dict)
+            # np.save('Time_series_dictionary/' + str(foldername) + '/full_results_' + 'num_trials_' + str(num_trials), self.result_dict)
 
             """
             np.save('Time_series_dictionary/' + str(foldername) + '/dict_learned_tensor' + '_' + str(
@@ -1286,7 +1281,7 @@ class ONMF_timeseries_reconstructor():
     def ONMF_predictor_historic(self,
                                 mode,
                                 foldername,
-                                prelearned_dict_seq = None, # if not none, use this seq of dict for prediction
+                                prelearned_dict_seq=None,  # if not none, use this seq of dict for prediction
                                 learn_from_future2past=True,
                                 ini_dict=None,
                                 ini_A=None,
@@ -1295,7 +1290,7 @@ class ONMF_timeseries_reconstructor():
                                 a1=0,  # regularizer for the code in partial fitting
                                 a2=0,  # regularizer for the code in recursive prediction
                                 future_extrapolation_length=0,
-                                learning_window_cap = None,
+                                learning_window_cap=None,
                                 if_save=True,
                                 minibatch_training_initialization=False,
                                 minibatch_alpha=1,
@@ -1323,7 +1318,7 @@ class ONMF_timeseries_reconstructor():
 
         self.W = ini_dict
         if ini_dict is None:
-            d = self.data_test.shape[0]*k*self.data_test.shape[2]     #(# states) x (# window length) x (# variables)
+            d = self.data_test.shape[0] * k * self.data_test.shape[2]  # (# states) x (# window length) x (# variables)
             self.W = np.random.rand(d, self.n_components)
         # print('W.shape', self.W.shape)
 
@@ -1345,7 +1340,7 @@ class ONMF_timeseries_reconstructor():
                 ### Set self.data_test to the truncated one during [1,t]
                 prelearned_dict = None
                 if prelearned_dict_seq is not None:
-                    prelearned_dict = prelearned_dict_seq[trial,t,:,:]
+                    prelearned_dict = prelearned_dict_seq[trial, t, :, :]
 
                 A_recons, W, At, Bt, code = self.ONMF_predictor(mode,
                                                                 foldername,
@@ -1387,7 +1382,7 @@ class ONMF_timeseries_reconstructor():
             W_total_seq_trials.append(W_total_seq)
             list_full_predictions.append(A_total_prediction)
 
-        W_total_seq_trials = np.asarray(W_total_seq_trials)
+        # W_total_seq_trials = np.asarray(W_total_seq_trials) #临时
 
         self.result_dict.update({'Evaluation_num_trials': str(num_trials)})
         self.result_dict.update({'Evaluation_A_full_predictions_trials': np.asarray(list_full_predictions)})
@@ -1398,10 +1393,9 @@ class ONMF_timeseries_reconstructor():
         print('!!! A_full_predictions_trials.shape', A_full_predictions_trials.shape)
 
         if if_save:
-
-            np.save('Time_series_dictionary/' + str(foldername) + '/full_results_' + 'num_trials_' + str(
-                num_trials), self.result_dict)
-
+            # np.save('Time_series_dictionary/' + str(foldername) + '/full_results_' + 'num_trials_' + str(
+            #     num_trials), self.result_dict)  # 临时
+            print('test')
             """
             np.save('Time_series_dictionary/' + str(foldername) + '/dict_learned_tensor' + '_' + str(
                 list[0]) + '_' + 'afteronline' + str(self.beta), self.W)
@@ -1454,7 +1448,9 @@ class ONMF_timeseries_reconstructor():
                             transform_alpha=a1, transform_algorithm='lasso_lars', positive_code=True)
         # alpha = L1 regularization parameter
         code = coder.transform(patch.T)
-        patch_recons = np.dot(self.W, code.T).T  # This gives prediction on the last L missing entries
+        # patch_recons = np.dot(self.W, code.T).T  # This gives prediction on the last L missing entries
+
+        patch_recons = np.dot(self.W.reshape(160,16), code.T).T # 临时
         patch_recons = patch_recons.reshape(-1, k, A.shape[2])
 
         # now paint the reconstruction canvas
