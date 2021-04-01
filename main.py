@@ -34,7 +34,7 @@ def main_train_joint():
     data_source = data_source_list[1]
     if_train_fresh = True
     #if_display_dict = False
-	if_display_dict =True
+    if_display_dict =True
     if_recons = False
     if_ONMF_timeseris_predictor_historic = True
     L = 60  ## prediction length
